@@ -33,7 +33,7 @@ namespace HDF5CSharp
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static (bool valid, string name) GetRealAttributeName(long id, string name, string alternativeName)
+        public static (bool valid, string name) GetRealAttributeName(long id, string name, string alternativeName)
         {
             string normalized = NormalizedName(name);
             if (!String.IsNullOrEmpty(normalized) && H5A.exists(id, normalized) > 0)
